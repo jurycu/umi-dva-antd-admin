@@ -4,31 +4,41 @@
     "start": "umi dev",
     "build": "umi build",
     "test": "umi test",
+    "build:test": "cross-env ANALYZE=1  UMI_ENV=test umi build",
+    "build:prod": "cross-env  ANALYZE=1 UMI_ENV=prod umi build",
     "lint": "eslint {src,mock,tests}/**/*.{js,jsx} --fix",
     "precommit": "lint-staged"
   },
-  "dependencies": {
-    "dva": "^2.6.0-beta.6",
-    "antd": "^3.19.5",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint": "^5.4.0",
-    "eslint-config-umi": "^1.4.0",
-    "eslint-plugin-flowtype": "^2.50.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "react-test-renderer": "^16.7.0",
-    "umi": "^2.7.7",
-    "umi-plugin-react": "^1.8.4"
+    "@ant-design/pro-table": "^2.40.0",
+    "@umijs/preset-react": "^1",
+    "ant-design-pro": "^2.3.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "umi": "^3.5.0",
+    "umi-request": "^1.3.9"
+  },
+  "dependencies": {
+    "@alitajs/antd-plus": "^2.5.0",
+    "@ant-design/charts": "^1.1.20",
+    "@ant-design/icons": "^4.6.2",
+    "@ant-design/pro-layout": "^6.21.1",
+    "@antv/l7": "^2.4.4",
+    "@antv/l7-react": "^2.3.2",
+    "antd": "^4.15.5",
+    "antd-input": "0.0.4",
+    "cross-env": "^7.0.3",
+    "dva": "^2.6.0-beta.22",
+    "js-cookie": "^2.2.1",
+    "moment": "^2.29.1",
+    "qs": "^6.10.1"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["eslint --fix", "git add"]
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=8.0.0"
