@@ -9,7 +9,7 @@ export default {
 
   dva: {},
   antd: {},
-  mfsu:{},
+  // mfsu:{},
   proxy: {
     '/v1': {
       target: 'http://127.0.0.1:8082',
@@ -32,18 +32,22 @@ export default {
           ]
         },
 
-        {
-          path: '/table',
-          routes: [
-            {path: '/table/general', component: 'table/General'},
-            {path: '/table/proTable', component: 'table/ProTable'},
-          ]
-        },
 
         {
           path: '/dva',
           routes: [
-            {path: '/dva/', component: 'dva/list'},
+            {path: '/dva/user', component: 'dva/User'},
+            {path: '/dva/monitor', component: 'dva/Monitor'},
+          ]
+        },
+
+
+        {
+          path: '/table',
+          routes: [
+            {path: '/table/basic', component: 'table/Basic'},
+            {path: '/table/query', component: 'table/Query'},
+            {path: '/table/search', component: 'table/Search'},
           ]
         },
       ],
