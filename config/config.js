@@ -9,10 +9,10 @@ export default {
 
   dva: {},
   antd: {},
-  // mfsu:{},
+  // mfsu:{},  //快速启动开启
   proxy: {
     '/v1': {
-      target: 'http://127.0.0.1:8082',
+      target: 'http://127.0.0.1:8082',//后端代理地址，本地调试使用，线上环境如果合并部署不需要设置
       changeOrigin: true,
     },
   },
@@ -22,32 +22,31 @@ export default {
       path: '/',
       component: '../layouts',
       routes: [
-        {path: 'home', component: 'home/Index'},
+        {path: '/work/home', component: 'home/Index'},
         //
         {
-          path: '/umi',
+          path: '/work/umi',
           routes: [
-            {path: '/umi/user', component: 'umi/User'},
-            {path: '/umi/monitor', component: 'umi/Monitor'},
+            {path: '/work/umi/user', component: 'umi/User'},
+            {path: '/work/umi/monitor', component: 'umi/Monitor'},
           ]
         },
 
 
         {
-          path: '/dva',
+          path: '/work/dva',
           routes: [
-            {path: '/dva/user', component: 'dva/User'},
-            {path: '/dva/monitor', component: 'dva/Monitor'},
+            {path: '/work/dva/user', component: 'dva/User'},
+            {path: '/work/dva/monitor', component: 'dva/Monitor'},
           ]
         },
 
 
         {
-          path: '/table',
+          path: '/work/table',
           routes: [
-            {path: '/table/basic', component: 'table/Basic'},
-            {path: '/table/query', component: 'table/Query'},
-            {path: '/table/search', component: 'table/Search'},
+            {path: '/work/table/basic', component: 'table/Basic'},
+            {path: '/work/table/search', component: 'table/Search'},
           ]
         },
       ],

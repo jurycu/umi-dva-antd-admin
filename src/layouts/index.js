@@ -15,7 +15,9 @@ const {Header, Content, Footer, Sider} = Layout;
 const role = 'admin'
 const IconFont = createFromIconfontCN({
   scriptUrl: [
-    '//at.alicdn.com/t/font_2630304_0cpyghmsu5fi.js'
+    '//at.alicdn.com/t/font_2630304_0cpyghmsu5fi.js',
+    '//at.alicdn.com/t/font_2630304_vcrdvzwuqps.js',
+    '//at.alicdn.com/t/font_2630278_kw39mkj5b0g.js'
   ],
 });
 

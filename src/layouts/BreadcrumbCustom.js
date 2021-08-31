@@ -8,7 +8,6 @@ let breadcrumbNameMap = {
   [BreadPath + 'work']: '首页',
   [BreadPath + 'work/table']: '表格页面',
   [BreadPath + 'work/table/basic']: '基础表格',
-  [BreadPath + 'work/table/query']: '查询表格',
   [BreadPath + 'work/table/search']: '搜索表格',
   [BreadPath + 'work/umi']: 'umi使用',
   [BreadPath + 'work/umi/user']: '用户管理',
@@ -24,13 +23,11 @@ let breadcrumbNameMap = {
 const tableMenu = (
   <Menu>
     <Menu.Item>
-      <Link to={"/work/sheet/basic"}>基础表格</Link>
+      <Link to={"/work/table/basic"}>基础表格</Link>
     </Menu.Item>
+
     <Menu.Item>
-      <Link to={"/work/sheet/query"}>查询表格</Link>
-    </Menu.Item>
-    <Menu.Item>
-      <Link to={"/work/sheet/search"}>集群管理</Link>
+      <Link to={"/work/table/search"}>集群管理</Link>
     </Menu.Item>
   </Menu>
 )

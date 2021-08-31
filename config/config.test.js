@@ -63,7 +63,6 @@ export default {
           path: '/table',
           routes: [
             {path: '/table/basic', component: 'table/Basic'},
-            {path: '/table/query', component: 'table/Query'},
             {path: '/table/search', component: 'table/Search'},
           ]
         },
