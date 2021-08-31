@@ -31,7 +31,7 @@
 
 ## 🔐  关于权限
 
-基于 [umi-plugin-authority](https://umijs.org/plugins/plugin-access) 提供权限功能，
+基于 [umi-access](https://umijs.org/plugins/plugin-access) 提供权限功能，
 
 使用示例如下
 
