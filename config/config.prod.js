@@ -39,31 +39,31 @@ export default {
       path: '/',
       component: '../layouts',
       routes: [
-        {path: 'home', component: 'home/Index'},
+        {path: '/work/home', component: 'home/Index'},
         //
         {
-          path: '/umi',
+          path: '/work/umi',
           routes: [
-            {path: '/umi/user', component: 'umi/User'},
-            {path: '/umi/monitor', component: 'umi/Monitor'},
+            {path: '/work/umi/user', component: 'umi/User'},
+            {path: '/work/umi/monitor', component: 'umi/Monitor'},
           ]
         },
 
 
         {
-          path: '/dva',
+          path: '/work/dva',
           routes: [
-            {path: '/dva/user', component: 'dva/User'},
-            {path: '/dva/monitor', component: 'dva/Monitor'},
+            {path: '/work/dva/user', component: 'dva/User'},
+            {path: '/work/dva/monitor', component: 'dva/Monitor'},
           ]
         },
 
 
         {
-          path: '/table',
+          path: '/work/table',
           routes: [
-            {path: '/table/basic', component: 'table/Basic'},
-            {path: '/table/search', component: 'table/Search'},
+            {path: '/work/table/basic', component: 'table/Basic'},
+            {path: '/work/table/search', component: 'table/Search'},
           ]
         },
       ],

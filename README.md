@@ -54,72 +54,45 @@
 
 ## 🔐  关于权限
 
-基于 [umi-plugin-authority](https://github.com/alitajs/umi-plugins/tree/master/packages/umi-plugin-authority) 提供权限功能，暴露 `useAuthority` hooks 和 `Authority` 组件实现权限控制的能力
+基于 [umi-plugin-authority](https://umijs.org/plugins/plugin-access) 提供权限功能，
 
 使用示例如下
 
-```tsx
-import React from 'react';
-import { useAuthority, Authority } from 'umi';
-
-const PageA = props => {
-  const { foo } = props;
-  const { combinationVerify } = useAuthority();
- 
-  // 使用 hooks 提供的能力  
-  if (combinationVerify('module1/action1')) {
-    // 存在 module1/action1 权限，则...
-  }
-  
-  return (
-    <div>
-      {/** 指定需要验证的权限 */}
-      <Authority
-        access="module1/action1"
-        fallback={<div>Can not read foo content.</div>}
+```js
+<Access
+        accessible={role === "admin"}
+        fallback={
+          <div style={{padding: 24, background: '#fff', minHeight: 660}}>
+            <Result
+              status="403"
+              title="403"
+              subTitle="你没有权限访问当前页面，请联系管理员:xx给你分配权限."
+              extra={[<DingdingOutlined key={"ding"}/>,
+                <a key={"href"} href="dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=jxxx">钉钉直达</a>]
+              }
+            />,
+            {this.props.children}
+          </div>
+        }
       >
-        Foo content.
-      </Authority>
-      {/** 直接指定权限 */}
-      <Authority
-        accessible={combinationVerify('module1/action1')}
-        fallback={<div>Can not update foo.</div>}
-      >
-        Update foo.
+        <div/>
       </Access>
-      {/** 复杂的校验 */}
-      <Authority
-        accessible={combinationVerify('(module1/action1 || module1/action2) && module1/action3')}
-        fallback={<div>Can not update foo.</div>}
-      >
-        Update foo.
-      </Access>
-      {/** children 为function */}
-      <Authority
-        accessible={combinationVerify('module3/action1')}
-        fallback={<div>Can not delete foo.</div>}
-      >
-        {(isMatch) => <span>权限校验结果: {isMatch}</span>}
-      </Authority>
-    </div>
-  );
-};
 ```
 
 ## ⌨️ 本地开发
 
 ```sh
 # 克隆项目到本地
-git clone git@github.com:ts-react/react-admin-template.git
+git clone https://github.com/jurycu/umi-dva-antd-admin.git
 
 # 切换到项目目录
-cd ./react-admin-template
+cd ./umi-dva-antd-admin
 
 # 安装依赖
 yarn
 
 # 启动服务
-npm run start
+yarn start
 ```
 
 ## 🖥  支持环境
@@ -132,6 +105,6 @@ npm run start
 
 ## 👥 社区互助
 
-| Github Issue                                      | 钉钉群                                                                                     | 微信群                                                                                   |
+| Github Issue                                      | 钉钉                                                                                     | 微信                                                                                   |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| [issues](https://github.com/ts-react/react-admin-template/issues) | <img src="https://github.com/alitajs/alita/blob/master/public/dingding.png" width="100" /> | <img src="https://github.com/alitajs/alita/blob/master/public/wechat.png" width="100" /> |
+| [issues](https://github.com/jurycu/umi-dva-antd-admin/issues) | <img src="https://github.com/alitajs/alita/blob/master/public/dingding.png" width="100" /> | <img src="https://github.com/alitajs/alita/blob/master/public/wechat.png" width="100" /> |
