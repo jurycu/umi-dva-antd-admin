@@ -24,7 +24,7 @@ const UserMenu = ({role}) => {
           </SubMenu>
           <SubMenu key="4" icon={<PieChartOutlined/>} title="Table页面">
             <Menu.Item key="4-1"><Link to={"/work/table/basic"}>基础表格</Link></Menu.Item>
-            <Menu.Item key="4-3"><Link to={"/work/table/search"}>搜索表单</Link></Menu.Item>
+            <Menu.Item key="4-3"><Link to={"/work/table/search"}>查询表格</Link></Menu.Item>
           </SubMenu>
           <SubMenu key="5" icon={<SettingFilled/>} title="系统管理">
             <Menu.Item key="5-1"><Link to={"/work/system/user"}>用户管理</Link></Menu.Item>
@@ -51,7 +51,7 @@ const UserMenu = ({role}) => {
           </SubMenu>
           <SubMenu key="4" icon={<PieChartOutlined/>} title="Table页面">
             <Menu.Item key="4-1"><Link to={"/work/table/basic"}>基础表格</Link></Menu.Item>
-            <Menu.Item key="4-3"><Link to={"/work/table/search"}>搜索表单</Link></Menu.Item>
+            <Menu.Item key="4-3"><Link to={"/work/table/search"}>查询表格</Link></Menu.Item>
           </SubMenu>
 
         </Menu>
