@@ -107,4 +107,4 @@ yarn start
 
 | Github Issue                                      | 钉钉                                                                                     | 微信                                                                                   |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| [issues](https://github.com/jurycu/umi-dva-antd-admin/issues) | <img src="https://github.com/alitajs/alita/blob/master/public/dingding.png" width="100" /> | <img src="https://github.com/alitajs/alita/blob/master/public/wechat.png" width="100" /> |
+| [issues](https://github.com/jurycu/umi-dva-antd-admin/issues) | <img src="https://github.com/jurycu/umi-dva-antd-admin/blob/main/src/assets/dingtalk.jpg" width="100" /> | <img src="https://github.com/jurycu/umi-dva-antd-admin/blob/main/src/assets/wechat.png" width="100" /> |
