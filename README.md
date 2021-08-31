@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://github.com/ts-react/react-admin-template">
+  <a href="https://github.com/jurycu/umi-dva-antd-admin">
     <img width="100" src="https://github.com/jurycu/umi-dva-antd-admin/blob/main/src/assets/mb.png">
   </a>
 </p>
 
-<h1 align="center">React Admin Template</h1>
+<h1 align="center">umi-dva-antd-admin</h1>
 
 <div align="center">
 开箱即用的中台前端/设计解决方案。
@@ -12,18 +12,17 @@
 
 ## ✨ 特性
 
-- 🛡 **TypeScript**: 应用程序级 JavaScript 的语言
+- 🛡 **JavaScript**: 纯js编写，学习成本低
 - 💎 **优雅美观**：基于 Ant Design 体系精心设计
 - 🚀 **最新技术栈**：使用 React/umi/antd 等前端前沿技术开发
-- 🌐 **国际化**：内建业界通用的国际化方案
 - 🔢 **Mock 数据**：实用的本地数据调试方案
 - ⚙️  **最佳实践**：良好的工程实践助您持续产出高质量代码
-- 🔐 **优秀的权限设计**：目前能找到的最好的权限实现方案
+- 🔐 **优秀的权限设计**：基于umi的Access
 
 ## 🎉 推荐
 
-- 微前端版本 [micro-frontends-template](https://github.com/pansyjs/micro-frontends-template) 正在同步开发中...
-- 好用的水印组件 [watermark](https://github.com/pansyjs/watermark)
+- 基于Antd的高级组件 [ProComponents](https://procomponents.ant.design/components/) 
+- 好用的水印组件 [watermark](https://procomponents.ant.design/components/water-mark/)
 
 
 ## 📜 效果
