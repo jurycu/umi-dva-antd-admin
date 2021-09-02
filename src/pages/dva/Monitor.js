@@ -103,42 +103,30 @@ class List extends React.Component {
 
   //直接请求service创建
   createService = async (values) => {
-    let create_ip = [], create_port = []
-    let ipList = values.ip.split("\n"), portList = values.port.split("\n")
-    for (let ip of ipList) {
-      if (ip !== "") {
-        create_ip.push(ip)
-      }
-    }
-    for (let port of portList) {
-      if (port !== "") {
-        create_port.push(port)
-      }
-    }
+
     const payload = {
-      "name": values.monitor_name,
-      "ip": create_ip,
-      "port": create_port,
+      "monitor_name": values.monitor_name,
+      "ip": values.ip,
+      "port": values.port,
       "type": "port",
       "remark": values.remark,
       "is_on": "acmp",
-      "interval": values.interval_time.toString()
+      "interval_time": values.interval_time.toString()
     }
 
     const res = await monitorPort.addPort(payload);
-    if (res) {
-      if (res.code === 200) {
-        message.success("创建端口监控成功！", 2)
-        this.setState({visible: false});
-        this.props.onDidMount();
-      } else {
-        notification.error({
-          message: '接口报错',
-          duration: null,
-          description:
+    if (res.success) {
+      message.success("创建端口监控成功！", 2)
+      this.setState({visible: false});
+      this.props.onDidMount();
+
+    }else {
+      notification.error({
+        message: '接口报错',
+        duration: null,
+        description:
           "创建失败",
-        });
-      }
+      });
     }
   }
 
@@ -175,43 +163,30 @@ class List extends React.Component {
 
   //直接请求service编辑
   editService = async (values) => {
-    let update_ip = [], update_port = []
-    let ipList = values.ip.split("\n"), portList = values.port.split("\n")
-    for (let ip of ipList) {
-      if (ip !== "") {
-        update_ip.push(ip)
-      }
-    }
-    for (let port of portList) {
-      if (port !== "") {
-        update_port.push(port)
-      }
-    }
+
     const payload = {
-      "name": values.monitor_name,
-      "ip": update_ip,
-      "port": update_port,
+      "monitor_name": values.monitor_name,
+      "ip": values.ip,
+      "port": values.port,
       "type": "port",
       "remark": values.remark,
       "is_on": this.state.record.is_on,
-      "interval": values.interval_time.toString()
+      "interval_time": values.interval_time.toString()
     }
     const res = await monitorPort.updatePort(payload);
-    if (res) {
-      if (res.code === 200) {
-        message.success("更新端口监控成功！", 2)
-        this.setState({edit_visible: false});
-        this.props.onDidMount();
+    if (res.success) {
+      message.success("更新端口监控成功！", 2)
+      this.setState({edit_visible: false});
+      this.props.onDidMount();
 
-      } else {
-        notification.error({
-          message: '接口报错',
-          duration: null,
-          description:
+    }else {
+      notification.error({
+        message: '接口报错',
+        duration: null,
+        description:
           "更新失败"
-          ,
-        });
-      }
+        ,
+      });
     }
   }
 
@@ -221,26 +196,14 @@ class List extends React.Component {
   }
 
   is_onService = async (values) => {
-    let update_ip = [], update_port = []
-    let ipList = values.ip.split("\n"), portList = values.port.split("\n")
-    for (let ip of ipList) {
-      if (ip !== "") {
-        update_ip.push(ip)
-      }
-    }
-    for (let port of portList) {
-      if (port !== "") {
-        update_port.push(port)
-      }
-    }
     const payload = {
-      "name": values.monitor_name,
-      "ip": update_ip,
-      "port": update_port,
+      "monitor_name": values.monitor_name,
+      "ip": values.ip,
+      "port": values.port,
       "type": "port",
       "remark": values.remark,
       "is_on": values.is_on,
-      "interval": values.interval_time.toString()
+      "interval_time": values.interval_time.toString()
     }
     let action = "编辑端口监控"
     if (values.is_on === "acmp") {
@@ -250,18 +213,15 @@ class List extends React.Component {
     }
 
     const res = await monitorPort.updatePort(payload);
-    if (res) {
-      if (res.code === 200) {
-        message.success(action + "成功！", 2)
-
-      } else {
-        notification.error({
-          message: '接口报错',
-          duration: null,
-          description:
+    if (res.success) {
+      message.success(action + "成功！", 2)
+    } else {
+      notification.error({
+        message: '接口报错',
+        duration: null,
+        description:
           "编辑失败",
-        });
-      }
+      });
     }
   }
 

@@ -1,33 +1,34 @@
-import request from '../service/request';
+import request from '../utils/umi-request';
 
 /**
  * 获取菜单数据
- * @param searchName
+ * @param searchPayload
  */
-export function getMonitorPort(searchName) {
-  return request('/v1/monitor/portList', {
+export function getMonitorPort(searchPayload) {
+  return request('/api/monitor/search', {
     method: 'POST',
-    body: JSON.stringify(searchName),
+    data: searchPayload,
   });
 }
 
 export function delPort(delName) {
-  return request('/v1/monitor/portDel', {
+  console.log(delName)
+  return request('/api/monitor/delete', {
     method: 'DELETE',
-    body: JSON.stringify(delName),
+    data: delName,
   });
 }
 
 export function addPort(addPayload) {
-  return request('/v1/monitor/portAdd', {
+  return request('/api/monitor/add', {
     method: 'POST',
-    body: JSON.stringify(addPayload),
+    data: addPayload,
   });
 }
 
 export function updatePort(updatePayload) {
-  return request('/v1/monitor/portUpdate', {
+  return request('/api/monitor/update', {
     method: 'PUT',
-    body: JSON.stringify(updatePayload),
+    data: updatePayload,
   });
 }

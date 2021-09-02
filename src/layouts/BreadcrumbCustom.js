@@ -10,14 +10,9 @@ let breadcrumbNameMap = {
   [BreadPath + 'work/table/basic']: '基础表格',
   [BreadPath + 'work/table/search']: '查询表格',
   [BreadPath + 'work/umi']: 'umi使用',
-  [BreadPath + 'work/umi/user']: '用户管理',
   [BreadPath + 'work/umi/monitor']: '监控管理',
   [BreadPath + 'work/dva']: 'dva使用',
-  [BreadPath + 'work/dva/user']: '用户管理',
   [BreadPath + 'work/dva/monitor']: '监控管理',
-  [BreadPath + 'work/system']: '系统管理',
-  [BreadPath + 'work/system/user']: '用户管理',
-  [BreadPath + 'work/system/record']: '操作记录',
 };
 
 const tableMenu = (
@@ -35,9 +30,6 @@ const tableMenu = (
 const umiMenu = (
   <Menu>
     <Menu.Item>
-      <Link to={"/work/umi/user"}>用户管理</Link>
-    </Menu.Item>
-    <Menu.Item>
       <Link to={"/work/umi/monitor"}>监控管理</Link>
     </Menu.Item>
   </Menu>
@@ -46,24 +38,12 @@ const umiMenu = (
 const dvaMenu = (
   <Menu>
     <Menu.Item>
-      <Link to={"/work/dva/user"}>用户管理</Link>
-    </Menu.Item>
-    <Menu.Item>
       <Link to={"/work/dva/monitor"}>监控管理</Link>
     </Menu.Item>
   </Menu>
 )
 
-const systemMenu = (
-  <Menu>
-    <Menu.Item>
-      <Link to={"/work/system/user"}>用户管理</Link>
-    </Menu.Item>
-    <Menu.Item>
-      <Link to={"/work/system/record"}>操作记录</Link>
-    </Menu.Item>
-  </Menu>
-)
+
 
 class BreadcrumbCustom extends Component {
   //利用PropTypes记住所跳转每个页面的位置
@@ -111,12 +91,7 @@ class BreadcrumbCustom extends Component {
           <Breadcrumb.Item key={url} overlay={dvaMenu}>
             {breadcrumbNameMap[url]}
           </Breadcrumb.Item>)
-      } else if (url === BreadPath + 'work/system') {
-        return (
-          <Breadcrumb.Item key={url} overlay={systemMenu}>
-            {breadcrumbNameMap[url]}
-          </Breadcrumb.Item>)
-      } else {
+      }  else {
         return (
           <Breadcrumb.Item key={url}>
             <Link to={url}>

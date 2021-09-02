@@ -44,7 +44,6 @@ export default {
         {
           path: '/work/umi',
           routes: [
-            {path: '/work/umi/user', component: 'umi/User'},
             {path: '/work/umi/monitor', component: 'umi/Monitor'},
           ]
         },
@@ -53,7 +52,6 @@ export default {
         {
           path: '/work/dva',
           routes: [
-            {path: '/work/dva/user', component: 'dva/User'},
             {path: '/work/dva/monitor', component: 'dva/Monitor'},
           ]
         },

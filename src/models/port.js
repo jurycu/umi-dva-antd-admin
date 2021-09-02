@@ -1,5 +1,4 @@
 import * as monitorPort from '../service/monitor'
-import Cookies from "js-cookie";
 
 export default {
   namespace: 'monitorPort',
@@ -18,20 +17,9 @@ export default {
 
     * delPort({payload}, {call, select, put}) {
       // const portList = yield  select(state => state)
+      console.log(payload)
       const puzzle = yield call(monitorPort.delPort, payload);
-      let mN = ""
-      for (let m of payload.delName) {
-        mN += m + "|"
-      }
-      if (puzzle.code !== 200) {
-        if (payload.delName.length > 1) {
-          recordAdd["action"] = "批量删除端口监控"
-        }
-      } else {
-        if (payload.delName.length > 1) {
-          recordAdd["action"] = "批量删除端口监控"
-        }
-      }
+      console.log(puzzle)
     },
 
   },
@@ -43,9 +31,8 @@ export default {
       };
     },
     getPortList(state, {payload: portList}) {
-      const portListLoad = portList.data.load;
       return {
-        portList: portListLoad,
+        portList: portList.data,
         portListLoading: false
       };
     },
