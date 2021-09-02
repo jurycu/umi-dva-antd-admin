@@ -56,6 +56,37 @@
       </Access>
 ```
 
+
+## 📚  关于数据流
+提供了两种主流数据流示例，一种是[dva](https://dvajs.com/),一种是umi直接的异步请求处理
+
+#### dva
+dva 首先是一个基于 redux 和 redux-saga 的数据流方案，然后为了简化开发体验，dva 还额外内置了 react-router 和 fetch，所以也可以理解为一个轻量级的应用框架。
+
+#### umi
+请求示例如下：
+```js
+// 删除
+  del = name => async () => {
+    console.log(name)
+    if (name.length === 0) {
+      message.error("请选择要删除的监控！", 2).then(r => r)
+    }
+    const res = await monitorPort.delPort({"delName": name});
+    if (res.success) {
+      message.success("删除成功！", 2)
+      this.onSearch("")
+    } else {
+      notification.error({
+        message: '接口报错',
+        duration: null,
+        description:
+          "编辑失败",
+      });
+    }
+  }
+```
+
 ## ⌨️ 本地开发
 
 ```sh
