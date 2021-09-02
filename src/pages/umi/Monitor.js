@@ -104,7 +104,7 @@ class List extends React.Component {
         message: '接口报错',
         duration: null,
         description:
-          "编辑失败",
+          "删除失败",
       });
     }
   }

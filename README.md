@@ -81,7 +81,7 @@ dva 首先是一个基于 redux 和 redux-saga 的数据流方案，然后为了
         message: '接口报错',
         duration: null,
         description:
-          "编辑失败",
+          "删除失败",
       });
     }
   }
