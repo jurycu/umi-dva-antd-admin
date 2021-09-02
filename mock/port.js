@@ -15,6 +15,38 @@ let portList = [{
     "port": "90\n90",
     "remark": "测试"
   },
+  {
+    "interval_time": "300",
+    "ip": "11.22.11.11\n11.22.11.112",
+    "is_on": "acmp",
+    "monitor_name": "测试1",
+    "port": "90\n90",
+    "remark": "测试"
+  },
+  {
+    "interval_time": "300",
+    "ip": "11.22.11.11\n11.22.11.112",
+    "is_on": "acmp",
+    "monitor_name": "测试2",
+    "port": "90\n90",
+    "remark": "测试"
+  },
+  {
+    "interval_time": "300",
+    "ip": "11.22.11.11\n11.22.11.112",
+    "is_on": "acmp",
+    "monitor_name": "测试3",
+    "port": "90\n90",
+    "remark": "测试"
+  },
+  {
+    "interval_time": "300",
+    "ip": "11.22.11.11\n11.22.11.112",
+    "is_on": "acmp",
+    "monitor_name": "测试4",
+    "port": "90\n90",
+    "remark": "测试"
+  },
 
 
 ]
@@ -78,7 +110,7 @@ export default {
     for (let it of portList) {
       let isHave = false
       for (let d of body.delName){
-        if ( it.monitor_name.indexOf(d) !== -1 ) {
+        if ( it.monitor_name === d ) {
           isHave = true
         }
       }

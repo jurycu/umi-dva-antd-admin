@@ -12,7 +12,6 @@ export function getMonitorPort(searchPayload) {
 }
 
 export function delPort(delName) {
-  console.log(delName)
   return request('/api/monitor/delete', {
     method: 'DELETE',
     data: delName,
